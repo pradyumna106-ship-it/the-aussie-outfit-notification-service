@@ -3,7 +3,8 @@ import express from "express";
 import {
   sendOrderConfirmationNotification,
   sendPasswordResetNotification,
-  getUserNotifications
+  getUserNotifications,
+  updateNotification
 } from "../controller/notification.js";
 
 const router = express.Router();
@@ -22,5 +23,7 @@ router.get(
   "/user/:userId",
   getUserNotifications
 );
+
+router.put("/:id", updateNotification);
 
 export default router;
